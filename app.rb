@@ -3,6 +3,13 @@ require "sinatra/reloader"
 require "better_errors"
 require "binding_of_caller"
 
+require "http"
+require "json"
+
+require "nokogiri"
+require "open-uri"
+require "uri"
+
 # Need this configuration for better_errors
 use(BetterErrors::Middleware)
 BetterErrors.application_root = __dir__
@@ -36,4 +43,4 @@ get("/play_scissors") do
 
   erb(:play_scissors)
 
-end 
+end
