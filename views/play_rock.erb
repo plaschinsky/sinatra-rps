@@ -1,0 +1,23 @@
+<!-- /views/play_rock.erb -->
+
+<h1>We played rock!</h1>
+
+<h1>
+<% if @enemy == 2 %>
+    They played paper!
+
+    <h1>We lost!</h1>
+    <% end %>
+
+<% if @enemy == 1 %>
+    They played rock!
+
+    <h1>We tied!</h1>
+    <% end %>
+
+<% if @enemy == 3 %>
+    They played scissors!
+
+    <h1>We won!</h1>
+    <% end %>
+</h1>

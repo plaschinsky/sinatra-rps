@@ -10,7 +10,30 @@ BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 get("/") do
   "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
+  <h1>Welcome to Rock-Paper-Scissors!</h1>
   "
 end
+
+get("/play_rock") do
+  @rock = 1
+  @enemy = rand(1..3)
+
+  erb(:play_rock)
+
+end 
+
+get("/play_paper") do
+  @rock = 2
+  @enemy = rand(1..3)
+
+  erb(:play_paper)
+
+end 
+
+get("/play_scissors") do
+  @rock = 3
+  @enemy = rand(1..3)
+
+  erb(:play_scissors)
+
+end 
