@@ -16,6 +16,10 @@ BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 get("/") do
+  erb(:elephant)
+end
+
+get("/") do
   
 url = "https://en.wikipedia.org/api/rest_v1/page/summary/Rock_paper_scissors"
 
@@ -31,26 +35,26 @@ puts "Image: #{data.dig('thumbnail', 'source') || 'No image'}"
   "
 end
 
-get("/play_rock") do
+get("/rock") do
   @rock = 1
   @enemy = rand(1..3)
 
-  erb(:play_rock)
+  erb(:rock)
 
 end 
 
-get("/play_paper") do
+get("/paper") do
   @rock = 2
   @enemy = rand(1..3)
 
-  erb(:play_paper)
+  erb(:paper)
 
 end 
 
-get("/play_scissors") do
+get("/scissors") do
   @rock = 3
   @enemy = rand(1..3)
 
-  erb(:play_scissors)
+  erb(:scissors)
 
 end
