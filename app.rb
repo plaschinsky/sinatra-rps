@@ -16,6 +16,16 @@ BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 get("/") do
+  
+url = "https://en.wikipedia.org/api/rest_v1/page/summary/Rock_paper_scissors"
+
+response = URI.open(url).read
+data = JSON.parse(response)
+
+puts "Title: #{data['title']}"
+puts "Summary: #{data['extract']}"
+puts "Image: #{data.dig('thumbnail', 'source') || 'No image'}"
+
   "
   <h1>Welcome to Rock-Paper-Scissors!</h1>
   "
